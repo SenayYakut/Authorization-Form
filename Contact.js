@@ -1,4 +1,5 @@
-import React from 'react';
+
+    import React from 'react';
 import ReactDOM from 'react-dom';
 
 class Contact extends React.Component {
@@ -22,31 +23,30 @@ class Contact extends React.Component {
 
   render() {
     const login = (
-      <form action="#" onSubmit = {this.authorize}>
+      <form action = "#" onSubmit={this.authorize}>
         <input 
           type="password" 
-          placeholder="Password" />
-        <input type="submit"/>
+          placeholder="Password">
+        </input>
+        <input type="submit">
+        </input>
       </form>
-      );
-
-      const contactInfo = (
-        <ul>
+    );
+    const contactInfo = (
+      <ul>
           <li>
             client@example.com
           </li>
           <li>
             555.555.5555
           </li>
-        </ul>
- 
-      );
+      </ul>
+  );
+    
     return (
       <div id="authorization">
-        <h1>
-          {this.state.authorized ? "Contact" : "Enter the Password"}
-        </h1>
-        { this.state.authorized ? contactInfo : login }
+        {this.state.authorized?<h1>Contact</h1>:<h1>Enter the Password</h1>}
+        {this.state.authorized === true ? contactInfo:login}
       </div>
     );
   }
